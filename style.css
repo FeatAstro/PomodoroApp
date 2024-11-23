@@ -45,7 +45,7 @@ body, html {
     -webkit-text-fill-color: transparent;
     
     /* Infinite smooth animation */
-    animation: gradient-shift 7s infinite linear;
+    animation: gradient-shift 6s infinite linear;
 }
 
 @keyframes gradient-shift {
