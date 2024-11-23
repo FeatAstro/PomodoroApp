@@ -130,18 +130,27 @@ body, html {
     color: white;
 }
 
+/* Pour les écrans larges */
 #timeGraph, #sessionsGraph {
-    width: 100%; /* Exemple */
-    height: 150px; /* Hauteur définie */
-    margin: 5px;
-    border-radius: 8px;
-    background-color: black;
+    width: 100%; /* La largeur s'ajuste à 100% du conteneur */
+    height: 150px; /* Hauteur par défaut */
+    max-width: 600px; /* Largeur maximale */
+    margin: 10px auto; /* Centrer graphiques */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #000000; /* Fond noir */
 }
 
+/* Pour les écrans de taille moyenne */
 @media (max-width: 768px) {
     #timeGraph, #sessionsGraph {
-        max-width: 90%;
-        max-height: 150px;
+        height: 125px; /* Réduire la hauteur */
+    }
+}
+
+/* Pour les petits écrans */
+@media (max-width: 480px) {
+    #timeGraph, #sessionsGraph {
+        height: 75px; /* Réduire encore la hauteur */
     }
 }
 

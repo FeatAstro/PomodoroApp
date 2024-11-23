@@ -586,6 +586,30 @@ function configureHighDpiCanvas(canvas, options = {}) {
   return ctx;
 }
 
+function adjustGraphSize() {
+  const timeGraph = document.getElementById('timeGraph');
+  const sessionsGraph = document.getElementById('sessionsGraph');
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth > 768) {
+      timeGraph.style.height = '150px';
+      sessionsGraph.style.height = '150px';
+  } else if (screenWidth > 480) {
+      timeGraph.style.height = '125px';
+      sessionsGraph.style.height = '125px';
+  } else {
+      timeGraph.style.height = '75px';
+      sessionsGraph.style.height = '75px';
+  }
+
+  // Réajuster les graphiques si existants
+  if (window.timeChart) window.timeChart.resize();
+  if (window.sessionsChart) window.sessionsChart.resize();
+}
+
+// Écouteurs pour ajustement dynamique
+document.addEventListener('DOMContentLoaded', adjustGraphSize);
+window.addEventListener('resize', adjustGraphSize);
 
 
 // Initialize window.currentWeekOffset at the start
