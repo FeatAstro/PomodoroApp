@@ -595,11 +595,11 @@ function adjustGraphSize() {
       timeGraph.style.height = '150px';
       sessionsGraph.style.height = '150px';
   } else if (screenWidth > 480) {
-      timeGraph.style.height = '125px';
-      sessionsGraph.style.height = '125px';
-  } else {
       timeGraph.style.height = '75px';
       sessionsGraph.style.height = '75px';
+  } else {
+      timeGraph.style.height = '25px';
+      sessionsGraph.style.height = '25px';
   }
 
   // Réajuster les graphiques si existants

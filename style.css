@@ -143,14 +143,14 @@ body, html {
 /* Pour les écrans de taille moyenne */
 @media (max-width: 768px) {
     #timeGraph, #sessionsGraph {
-        height: 125px; /* Réduire la hauteur */
+        height: 75px; /* Réduire la hauteur */
     }
 }
 
 /* Pour les petits écrans */
 @media (max-width: 480px) {
     #timeGraph, #sessionsGraph {
-        height: 75px; /* Réduire encore la hauteur */
+        height: 25px; /* Réduire encore la hauteur */
     }
 }
 
