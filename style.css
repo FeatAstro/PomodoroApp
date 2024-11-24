@@ -10,13 +10,13 @@
 /* Pour les écrans de taille moyenne */
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Réduire la taille de la police globale */
+        font-size: 11px; /* Réduire la taille de la police globale */
     }
     .titlePage {
-        font-size: 2.5em; /* Ajuster la taille du titre */
+        font-size: 2em; /* Ajuster la taille du titre */
     }
     .timer {
-        font-size: 5em; /* Ajuster la taille du texte du chronomètre */
+        font-size: 4em; /* Ajuster la taille du texte du chronomètre */
     }
 }
 
@@ -81,7 +81,6 @@
 @media (max-width: 768px) {
     #today {
         font-size: 18px; /* Réduire la taille du texte */
-        animation: none; /* Désactiver les animations si elles gênent */
     }
 }
 
@@ -144,12 +143,6 @@
     align-items:center;
 }
 
-@media (max-width: 480px) {
-    .timerMode, .timerControl {
-        flex-direction: column; /* Boutons empilés verticalement */
-    }
-}
-
 /* Graphs */
 
 .graphSection {
@@ -177,8 +170,8 @@
 /* Pour les écrans de taille moyenne */
 @media (max-width: 768px) {
     #timeGraph, #sessionsGraph {
-        height: 100px; /* Réduire la hauteur */
-        max-width: 500px; /* Réduire la largeur maximale */
+        height: 50px; /* Réduire la hauteur */
+        max-width: 300px; /* Réduire la largeur maximale */
     }
 }
 
