@@ -7,11 +7,32 @@
     font-family: JetBrains Mono;
 }
 
-body, html {
-    width: fit-content(100%);
-    height: fit-content(100%);
-    background-color: rgba(214, 214, 214, 0.538);
+/* Pour les écrans de taille moyenne */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Réduire la taille de la police globale */
+    }
+    .titlePage {
+        font-size: 2.5em; /* Ajuster la taille du titre */
+    }
+    .timer {
+        font-size: 5em; /* Ajuster la taille du texte du chronomètre */
+    }
 }
+
+/* Pour les petits écrans */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    .titlePage {
+        font-size: 2em;
+    }
+    .timer {
+        font-size: 4em;
+    }
+}
+
 
 /* Title */
 
@@ -54,6 +75,13 @@ body, html {
     }
     100% {
         background-position: 0% 50%; /* Fin sans à-coup */
+    }
+}
+
+@media (max-width: 768px) {
+    #today {
+        font-size: 18px; /* Réduire la taille du texte */
+        animation: none; /* Désactiver les animations si elles gênent */
     }
 }
 
@@ -116,6 +144,12 @@ body, html {
     align-items:center;
 }
 
+@media (max-width: 480px) {
+    .timerMode, .timerControl {
+        flex-direction: column; /* Boutons empilés verticalement */
+    }
+}
+
 /* Graphs */
 
 .graphSection {
@@ -143,16 +177,19 @@ body, html {
 /* Pour les écrans de taille moyenne */
 @media (max-width: 768px) {
     #timeGraph, #sessionsGraph {
-        height: 75px; /* Réduire la hauteur */
+        height: 100px; /* Réduire la hauteur */
+        max-width: 500px; /* Réduire la largeur maximale */
     }
 }
 
 /* Pour les petits écrans */
 @media (max-width: 480px) {
     #timeGraph, #sessionsGraph {
-        height: 25px; /* Réduire encore la hauteur */
+        height: 50px;
+        max-width: 300px;
     }
 }
+
 
 canvas {
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -245,6 +282,25 @@ canvas.entering {
     line-height: center;
     transition: all 0.5s ease, box-shadow 0.5s ease;
 }
+
+/* Pour les écrans de taille moyenne */
+@media (max-width: 768px) {
+    .timerButton, .weekButton, .controlButton {
+        width: 50px; /* Réduire la largeur */
+        height: 30px; /* Réduire la hauteur */
+        font-size: 12px; /* Réduire la taille du texte */
+    }
+}
+
+/* Pour les petits écrans */
+@media (max-width: 480px) {
+    .timerButton, .weekButton, .controlButton {
+        width: 40px;
+        height: 25px;
+        font-size: 10px;
+    }
+}
+
 
 .timerButton:hover, .weekButton:hover, .controlButton:hover {
     transform: translateY(-4px);
@@ -450,6 +506,15 @@ main {
     gap: 10px;
     width: 100%;
     padding: 10px;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Une seule colonne pour tout */
+    }
+    .main_left, .main_center, .main_right {
+        grid-column: 1 / 2; /* Étendre chaque section sur toute la largeur */
+    }
 }
 
 .main_left, .main_right {
