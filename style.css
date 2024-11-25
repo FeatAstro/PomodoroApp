@@ -249,6 +249,24 @@ main {
     100% { background-position: 0% 50%; }
 }
 
+/* Today */
+#today {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(90deg, #7b460d, #46280c, #000000, #46280c, #7b460d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 6s infinite linear;
+}
+
+.session p {
+    margin: 0;
+    font-size: 10px;
+}
+
 /* ----------------------- Media Queries ----------------------- */
 @media (max-width: 768px) {
     body { font-size: 12px; }
@@ -266,7 +284,7 @@ main {
     }
 
     #today{
-        font-size: 10px;
+        font-size: 16px;
     }
 }
 
@@ -275,10 +293,14 @@ main {
     
     .titlePage { font-size: 2em; }
     
-    .timer { font-size: 5.5em; }
+    .timer { font-size: 7em; }
 
     #today{
-        font-size: 10px;
+        font-size: 14px;
+    }
+
+    .session p{
+        font-size: 7px;
     }
     
     .timerButton, .relaxButton, .controlButton {
@@ -306,18 +328,7 @@ main {
     padding: 10px;
 }
 
-/* Today */
-#today {
-    font-size: 22px;
-    font-weight: bold;
-    font-style: italic;
-    padding: 10px;
-    background-size: 200% 100%;
-    background-image: linear-gradient(90deg, #7b460d, #46280c, #000000, #46280c, #7b460d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-shift 6s infinite linear;
-}
+
 
 /* Past Sessions */
 .session-container {
@@ -343,11 +354,6 @@ main {
     margin-bottom: 2px;
     padding: 2px 5px;
     border-radius: var(--border-radius-sm);
-}
-
-.session p {
-    margin: 0;
-    font-size: 10px;
 }
 
 /* Scrollbar Styling */
