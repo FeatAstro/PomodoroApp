@@ -276,6 +276,10 @@ main {
     .titlePage { font-size: 2em; }
     
     .timer { font-size: 5.5em; }
+
+    #today{
+        font-size: 10px;
+    }
     
     .timerButton, .relaxButton, .controlButton {
         width: 60px;
