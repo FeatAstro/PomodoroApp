@@ -283,34 +283,6 @@ main {
     }
 }
 
-/* Specific device zoom levels */
-@media (max-width: 390px) {
-    body {
-        transform: scale(0.3);
-        transform-origin: top left;
-    }
-}
-
-@media (min-width: 391px) and (max-width: 844px) {
-    body {
-        transform: scale(0.5);
-        transform-origin: top left;
-    }
-}
-
-@media (min-width: 845px) and (max-width: 810px) {
-    body {
-        transform: scale(0.7);
-        transform-origin: top left;
-    }
-}
-
-@media (min-width: 811px) and (max-width: 1080px) {
-    body {
-        transform: scale(1);
-        transform-origin: top left;
-    }
-}
 
 /* [Code précédent reste identique jusqu'aux media queries] */
 
