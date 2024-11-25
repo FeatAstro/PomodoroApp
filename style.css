@@ -251,9 +251,32 @@ main {
 
 /* ----------------------- Media Queries ----------------------- */
 @media (max-width: 768px) {
+    body { font-size: 12px; }
+    
+    .timerButton, .relaxButton, .controlButton {
+        width: 70px;
+        height: 50px;
+        font-size: 12px;
+    }
+
+    .weekButton {
+        width: 50px;
+        height: 30px;
+        font-size: 8px;
+    }
+
+    #today{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
     body { font-size: 10px; }
     
-
+    .titlePage { font-size: 2em; }
+    
+    .timer { font-size: 5.5em; }
+    
     .timerButton, .relaxButton, .controlButton {
         width: 60px;
         height: 40px;
@@ -261,23 +284,9 @@ main {
     }
 
     .weekButton {
-        width: 50px;
+        width: 40px;
         height: 20px;
         font-size: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    body { font-size: 8px; }
-    
-    .titlePage { font-size: 2em; }
-    
-    .timer { font-size: 4em; }
-    
-    .timerButton, .weekButton, .controlButton, .relaxButton {
-        width: 40px;
-        height: 25px;
-        font-size: 10px;
     }
 }
 
