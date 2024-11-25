@@ -68,22 +68,22 @@
             </section>
         </div>
 
-        <section class="bottom">
-            <div class="bottom_left">
-                <h3>Today</h3>
-                <section class="todayWork">
-                    <div id="totalTime" class="todayTime">Total: 0 h 0 min</div>
-                    <div id="sessionsCount" class="todaySession">Session: 0</div>
-                </section>
-            </div>
-            <div class="bottom_center">
-                <div class="pastSessionContainer"><button id="pastSessionsButton" onclick="SessionManager.showAllSessions()" class="pastSessionsButton">Previously</button></div>
-                <div id="pastSessions" class="session-container"></div>
-            </div>
-            <div class="bottom_right">
-                <div id="today"></div>
-            </div>
-        </section>
+        <div class="bottom_left">
+            <h3>Today</h3>
+            <section class="todayWork">
+                <div id="totalTime" class="todayTime">Total: 0 h 0 min</div>
+                <div id="sessionsCount" class="todaySession">Session: 0</div>
+            </section>
+        </div>
+
+        <div class="bottom_center">
+            <div class="pastSessionContainer"><button id="pastSessionsButton" onclick="SessionManager.showAllSessions()" class="pastSessionsButton">Previously</button></div>
+            <div id="pastSessions" class="session-container"></div>
+        </div>
+        
+        <div class="bottom_right">
+            <div id="today"></div>
+        </div>
     </main>
     
     <footer>

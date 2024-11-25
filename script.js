@@ -441,9 +441,18 @@ class SessionManager {
     if (window.timeChart) window.timeChart.destroy();
     if (window.sessionsChart) window.sessionsChart.destroy();
 
+    // Fonction pour ajuster la taille de police en fonction de la largeur de l'écran
+    const getResponsiveFontSize = () => {
+        const width = window.innerWidth;
+        if (width > 1024) return 14; // Grands écrans
+        if (width > 768) return 10;  // Tablettes
+        return 6;                   // Petits écrans
+    };
+
     // Get the current day to match the labels
     const today = new Date().toLocaleDateString('en-EN', { weekday: 'short' });
 
+    // Création du graphique des heures
     window.timeChart = new Chart(timeCtx, {
       type: 'bar',
       data: {
@@ -467,8 +476,7 @@ class SessionManager {
                   labels: {
                       color: '#fff', // Couleur du texte de la légende
                       font: {
-                          size: 16, // Taille du texte
-                          weight: 'italic bold' // Poids du texte
+                          size: getResponsiveFontSize(), // Taille dynamique
                       },
                       usePointStyle: true, // Utiliser des points au lieu des carrés
                       pointStyle: 'rect' // Style du point dans la légende
@@ -482,20 +490,22 @@ class SessionManager {
               }
           },
           scales: {
+              display: true,
               x: {
-                  ticks: { color: '#fff', font: { size: 14 } },
+                  ticks: { color: '#fff', font: { size: getResponsiveFontSize() } },
                   grid: { color: 'transparent' }
               },
               y: {
                   beginAtZero: true,
-                  ticks: { color: '#fff', font: { size: 14 }, stepSize: 1 },
+                  ticks: { color: '#fff', font: { size: getResponsiveFontSize() }, stepSize: 1 },
                   grid: { color: 'rgba(255, 255, 255, 0.2)' }
               }
           }
       }
   });
-  
-  window.sessionsChart = new Chart(sessionsCtx, {
+
+    // Création du graphique des sessions
+    window.sessionsChart = new Chart(sessionsCtx, {
       type: 'bar',
       data: {
           labels: weekData.labels,
@@ -518,7 +528,7 @@ class SessionManager {
                   labels: {
                       color: '#fff', // Couleur du texte de la légende
                       font: {
-                          size: 16, // Taille du texte
+                          size: getResponsiveFontSize(), // Taille dynamique
                           weight: 'italic bold', // Poids du texte
                       },
                       usePointStyle: true, // Utiliser des points au lieu des carrés
@@ -534,19 +544,34 @@ class SessionManager {
           },
           scales: {
               x: {
-                  ticks: { color: '#fff', font: { size: 14 } },
+                  ticks: { color: '#fff', font: { size: getResponsiveFontSize() } },
                   grid: { color: 'transparent' }
               },
               y: {
                   beginAtZero: true,
-                  ticks: { color: '#fff', font: { size: 14 }, stepSize: 1 },
+                  ticks: { color: '#fff', font: { size: getResponsiveFontSize() }, stepSize: 1 },
                   grid: { color: 'rgba(255, 255, 255, 0.2)' }
               }
           }
       }
     });
-  
+
+    // Mise à jour des tailles dynamiques lors du redimensionnement de la fenêtre
+    window.addEventListener('resize', () => {
+        const fontSize = getResponsiveFontSize();
+        window.timeChart.options.plugins.legend.labels.font.size = fontSize;
+        window.timeChart.options.scales.x.ticks.font.size = fontSize;
+        window.timeChart.options.scales.y.ticks.font.size = fontSize;
+
+        window.sessionsChart.options.plugins.legend.labels.font.size = fontSize;
+        window.sessionsChart.options.scales.x.ticks.font.size = fontSize;
+        window.sessionsChart.options.scales.y.ticks.font.size = fontSize;
+
+        window.timeChart.update();
+        window.sessionsChart.update();
+    });
   }
+
 
   static getWeekNumber(date) {
       const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
@@ -585,32 +610,6 @@ function configureHighDpiCanvas(canvas, options = {}) {
 
   return ctx;
 }
-
-function adjustGraphSize() {
-  const timeGraph = document.getElementById('timeGraph');
-  const sessionsGraph = document.getElementById('sessionsGraph');
-  const screenWidth = window.innerWidth;
-
-  if (screenWidth > 768) {
-      timeGraph.style.height = '150px';
-      sessionsGraph.style.height = '150px';
-  } else if (screenWidth > 480) {
-      timeGraph.style.height = '75px';
-      sessionsGraph.style.height = '75px';
-  } else {
-      timeGraph.style.height = '25px';
-      sessionsGraph.style.height = '25px';
-  }
-
-  // Réajuster les graphiques si existants
-  if (window.timeChart) window.timeChart.resize();
-  if (window.sessionsChart) window.sessionsChart.resize();
-}
-
-// Écouteurs pour ajustement dynamique
-document.addEventListener('DOMContentLoaded', adjustGraphSize);
-window.addEventListener('resize', adjustGraphSize);
-
 
 // Initialize window.currentWeekOffset at the start
 window.currentWeekOffset = 0;
