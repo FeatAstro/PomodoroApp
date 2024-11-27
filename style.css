@@ -65,13 +65,13 @@ main {
 .main_center,
 .bottom_left, .bottom_center, .bottom_right{
     justify-self: center;
-    align-self: stretch;
+    align-self: center;
     text-align: center;
 }
 
 .main_left, .main_right{
     justify-self: space-between;
-    align-self: stretch;
+    align-self: center;
     text-align: center;
 }
 
