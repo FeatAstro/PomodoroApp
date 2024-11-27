@@ -659,8 +659,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeCanvas = document.getElementById('timeGraph');
     const sessionsCanvas = document.getElementById('sessionsGraph');
 
-    configureHighDpiCanvas(timeCanvas);
-    configureHighDpiCanvas(sessionsCanvas);
+    // configureHighDpiCanvas(timeCanvas);
+    // configureHighDpiCanvas(sessionsCanvas);
 
     // Mettez à jour les graphiques
     SessionManager.updateGraphs(window.currentWeekOffset || 0);
