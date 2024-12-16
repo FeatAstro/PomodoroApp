@@ -28,34 +28,6 @@
     </header>
     
     <main>
-        <div class="main_left"> 
-            <div id="weekControls" class="timeWeekNumber">
-                <div id="timeWeekNumber"><span id="timeStartOfWeekDateText"></span></div>
-            </div>
-            <section class="graphSection">
-                <nav id="weekNavigation">
-                    <button onclick="changeWeek(-1)" class="weekButton">Week -1</button>
-                    <button onclick="changeWeek(1)" class="weekButton">Week +1</button>
-                </nav>
-                <h4>TIME</h4>
-                <canvas id="timeGraph"></canvas>
-            </section>
-        </div>
-
-        <div class="main_right"> 
-            <div id="weekControls" class="timeWeekNumber">
-                <div id="timeWeekNumber"><span id="timeStartOfWeekDateNumber"></span></div>
-            </div>
-            <section class="graphSection">
-                <nav id="weekNavigation">
-                    <button onclick="changeWeek(-1)" class="weekButton">Week -1</button>
-                    <button onclick="changeWeek(1)" class="weekButton">Week +1</button>
-                </nav>
-                <h4>SESSIONS</h4>
-                <canvas id="sessionsGraph"></canvas>
-            </section>
-        </div>
-
         <div class="main_center"> 
             <div class="timerSection"> 
                 <div id="sessionOptions" class="timerMode">
@@ -75,6 +47,17 @@
         </div>
 
         <div class="bottom_left">
+            <div id="weekControls" class="timeWeekNumber">
+                <div id="timeWeekNumber"><span id="timeStartOfWeekDateText"></span></div>
+            </div>
+            <section class="graphSection">
+                <nav id="weekNavigation">
+                    <button onclick="changeWeek(-1)" class="weekButton">Week -1</button>
+                    <button onclick="changeWeek(1)" class="weekButton">Week +1</button>
+                </nav>
+                <h4>TIME</h4>
+                <canvas id="timeGraph"></canvas>
+            </section>
         </div>
 
         <div class="bottom_center">
@@ -83,6 +66,17 @@
         </div>
         
         <div class="bottom_right">
+            <div id="weekControls" class="timeWeekNumber">
+                <div id="timeWeekNumber"><span id="timeStartOfWeekDateNumber"></span></div>
+            </div>
+            <section class="graphSection">
+                <nav id="weekNavigation">
+                    <button onclick="changeWeek(-1)" class="weekButton">Week -1</button>
+                    <button onclick="changeWeek(1)" class="weekButton">Week +1</button>
+                </nav>
+                <h4>SESSIONS</h4>
+                <canvas id="sessionsGraph"></canvas>
+            </section>
         </div>
     </main>
     
